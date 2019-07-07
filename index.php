@@ -50,11 +50,13 @@
     </nav>
     <!-- stop nav -->
 
+
+    <!-- mulai form -->
     <form style="padding-top: 50px;">
         <div class="container">
 
             <div class="form-row">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     <input style="margin-right: 10px;" type="text" class="form-control" placeholder="nama depan">
                 </div>
                 <div class="form-group col-md-3">
@@ -63,21 +65,69 @@
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-5">
                     <input style="margin-right: 10px;" type="email" class="form-control" placeholder="Email">
                 </div>
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-5">
                     <input style="margin-right: 10px;" type="number" class="form-control" placeholder="Nomor Telpon" >
                 </div>
             </div>
 
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-5">
                     <input style="margin-right: 10px;" type="password" class="form-control" placeholder="Password">
                 </div>
+            </div>
+            
+            <div class="form-row col-md-2">
+                <label>Tanggal Lahir</label>
+            </div>
+            <div class="form-row">                
+                <div class="form-group col-md-1">
+                  <select class="custom-select mr-sm-2" name="tanggal">
+                    <?php
+                        for ($tanggal=1; $tanggal<=31; $tanggal++){
+                            echo "<option value='$tanggal'>$tanggal</option>";
+                        }
+                    ?>
+                  </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <select class="custom-select mr-sm-2" name="bulan">
+                        <?php
+                            $bulan=1;
+                            while($bulan<=12)
+                            {
+                                echo "<option value='$bulan'>Bulan $bulan</option>";
+                                $bulan++;
+                            }
+                        ?>
+                    </select>
+                </div>
+
+                <div class="form-group col-md-2">
+                    <select class="custom-select mr-sm-2" name="tahun">
+                        <?php
+                            for ($tahun=1990; $tahun<=2020 ; $tahun++) { 
+                                echo "<option value='$tahun'>$tahun</option>";
+                            }
+                        ?>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
+                <label class="custom-control-label" for="customControlValidation2">Laki - Laki</label>
+            </div>
+            <div class="custom-control custom-radio mb-3">
+                <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
+                <label class="custom-control-label" for="customControlValidation3">Perempuan</label>
             </div>
 
             <button type="submit" class="btn btn-success">
@@ -85,5 +135,7 @@
             </button>
         </div>
     </form>
+    <!-- akhir form -->
+
 </body>
 </html>
